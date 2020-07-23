@@ -10,10 +10,13 @@ class TadpolesController < ApplicationController
       pond_id: @tadpole.pond.id
     })
 
-    frog.save
-    @tadpole.destroy
+    if frog.save
+      @tadpole.destroy
+      redirect_to frog_path(frog)
+    else
+      render :show
+    end
 
-    redirect_to frog_path(frog)
   end
 
   def index
