@@ -29,5 +29,4 @@ describe Tadpole do
     expect(tad.pond).to eq(updated_walden)
     expect(updated_walden.tadpoles).to include(tad)
   end
-
 end
