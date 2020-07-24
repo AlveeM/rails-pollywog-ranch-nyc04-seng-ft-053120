@@ -4,6 +4,13 @@ class TadpolesController < ApplicationController
   # add your metamorphose action here
   def metamorphose 
     # @tadpole = Tadpole.find(params[:id])
+    # @tadpole = #<Tadpole id: 2, name: "Harold", color: "green", frog_id: 1>
+    # @tadpole.name #=> "Harold"
+    # @tadpole.color #=> "green"
+    # @tadpole.pond.id #=> 1
+    # id | Tadpole Name |  Color  | Frog Id
+    # 2  |   Harold     | "green" |    1
+
     frog = Frog.new({
       name: @tadpole.name,
       color: @tadpole.color,
@@ -24,6 +31,12 @@ class TadpolesController < ApplicationController
   end
 
   def show
+    # http://localhost:3000/tadpoles/2
+    # id => 2
+    # @tadpole = Tadpole.find(params[:id])
+    # @tadpole = Tadpole.find(params[2])
+    # @tadpole = #<Tadpole id: 2, name: "Harold", color: "green", frog_id: 1> 
+    # render :show
   end
 
   def new
